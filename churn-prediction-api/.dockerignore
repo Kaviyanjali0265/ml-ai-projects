@@ -1,0 +1,9 @@
+data/
+notebooks/
+mlruns/
+mlartifacts/
+tests/
+.gitignore
+.env
+__pycache__/
+*.pyc
