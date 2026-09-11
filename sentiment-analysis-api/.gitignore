@@ -1,0 +1,32 @@
+# --- Model ---
+models/sentiment-model/
+models/checkpoints/
+models/*.png
+
+# --- MLflow ---
+mlruns/
+mlartifacts/
+mlflow.db
+
+# --- HuggingFace cache ---
+.cache/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+venv/
+.venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.vscode/
+.idea/
