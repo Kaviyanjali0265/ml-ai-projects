@@ -1,7 +1,6 @@
 # --- Model ---
 models/sentiment-model/
 models/checkpoints/
-models/*.png
 
 # --- MLflow ---
 mlruns/
