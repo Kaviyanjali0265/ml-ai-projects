@@ -1,0 +1,92 @@
+[
+  {
+    "id": "kb001",
+    "title": "Database Connection Pooling",
+    "content": "Connection pooling maintains a pool of reusable database connections to avoid the overhead of opening and closing connections on every request. Use libraries like SQLAlchemy with pool_size and max_overflow settings. Common issues include pool exhaustion under high load and stale connections.",
+    "tags": ["database", "performance", "backend"]
+  },
+  {
+    "id": "kb002",
+    "title": "Handling API Rate Limits",
+    "content": "Rate limiting restricts how many requests a client can make in a time window. Implement exponential backoff with jitter when hitting rate limits. Use a token bucket or leaky bucket algorithm on the server side. Return 429 Too Many Requests with a Retry-After header.",
+    "tags": ["api", "backend", "reliability"]
+  },
+  {
+    "id": "kb003",
+    "title": "Docker Container Networking",
+    "content": "Docker containers communicate via bridge networks by default. Use docker-compose networks to connect services. Use host.docker.internal to reach the host machine from inside a container. Expose ports with -p host:container. Use named networks for multi-container setups.",
+    "tags": ["docker", "networking", "devops"]
+  },
+  {
+    "id": "kb004",
+    "title": "Python Async vs Sync",
+    "content": "Use async/await for I/O-bound tasks like HTTP calls and database queries. Use threads or multiprocessing for CPU-bound tasks. FastAPI supports both sync and async route handlers. asyncio.gather runs multiple coroutines concurrently. Avoid blocking calls inside async functions.",
+    "tags": ["python", "async", "performance"]
+  },
+  {
+    "id": "kb005",
+    "title": "JWT Authentication",
+    "content": "JSON Web Tokens are stateless authentication tokens with three parts: header, payload, signature. Sign with HS256 or RS256. Store in httpOnly cookies or Authorization header. Set short expiry (15 min) with refresh tokens. Validate signature and expiry on every request. Never store sensitive data in payload.",
+    "tags": ["security", "authentication", "api"]
+  },
+  {
+    "id": "kb006",
+    "title": "Kubernetes Pod Crash Loops",
+    "content": "CrashLoopBackOff means a pod keeps restarting. Debug with kubectl logs and kubectl describe pod. Common causes: missing environment variables, failed health checks, OOM kills, or wrong startup commands. Check resource limits and liveness probe configuration.",
+    "tags": ["kubernetes", "devops", "debugging"]
+  },
+  {
+    "id": "kb007",
+    "title": "Redis Caching Strategies",
+    "content": "Cache-aside: application checks cache first, falls back to DB on miss. Write-through: write to cache and DB simultaneously. Write-behind: write to cache, async flush to DB. Set appropriate TTL to avoid stale data. Use Redis SCAN instead of KEYS in production. Monitor memory usage and eviction policy.",
+    "tags": ["redis", "caching", "performance"]
+  },
+  {
+    "id": "kb008",
+    "title": "Python Memory Leaks",
+    "content": "Common causes of memory leaks in Python: circular references, global variables accumulating data, unclosed file handles, and large objects in module scope. Use tracemalloc to trace memory allocation. objgraph shows object counts. gc.collect() forces garbage collection. Profile with memory_profiler.",
+    "tags": ["python", "debugging", "performance"]
+  },
+  {
+    "id": "kb009",
+    "title": "CI/CD Pipeline Best Practices",
+    "content": "Keep pipelines fast by caching dependencies. Run tests in parallel. Use separate stages for lint, test, build, and deploy. Never hardcode secrets - use environment variables or secret managers. Use branch protection rules. Deploy to staging before production. Add smoke tests after deployment.",
+    "tags": ["cicd", "devops", "testing"]
+  },
+  {
+    "id": "kb010",
+    "title": "SQL Query Optimization",
+    "content": "Use EXPLAIN ANALYZE to inspect query plans. Add indexes on columns used in WHERE, JOIN, and ORDER BY. Avoid SELECT * in production. Use LIMIT for large result sets. Avoid N+1 queries by using JOINs or batch fetching. Partial indexes for filtered queries. Monitor slow query logs.",
+    "tags": ["database", "sql", "performance"]
+  },
+  {
+    "id": "kb011",
+    "title": "Microservices Communication Patterns",
+    "content": "Synchronous: REST or gRPC for request-response. Asynchronous: message queues (Kafka, RabbitMQ) for event-driven. Use circuit breakers to handle downstream failures. Implement retries with exponential backoff. Service mesh (Istio) handles mTLS and observability. API gateway for routing and auth.",
+    "tags": ["microservices", "architecture", "backend"]
+  },
+  {
+    "id": "kb012",
+    "title": "Git Branching Strategies",
+    "content": "GitFlow: main, develop, feature, release, hotfix branches. Trunk-based: short-lived feature branches merged to main frequently. GitHub Flow: feature branches + pull requests + main. Use semantic versioning for releases. Squash commits before merging to keep history clean. Protect main with required reviews.",
+    "tags": ["git", "devops", "workflow"]
+  },
+  {
+    "id": "kb013",
+    "title": "Load Balancing Algorithms",
+    "content": "Round robin: distribute requests equally in order. Least connections: route to server with fewest active connections. IP hash: same client always hits same server (session affinity). Weighted round robin: servers with more capacity get more traffic. Health checks remove unhealthy servers automatically.",
+    "tags": ["networking", "infrastructure", "performance"]
+  },
+  {
+    "id": "kb014",
+    "title": "Python Logging Best Practices",
+    "content": "Use the logging module, not print statements. Set log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Use structured logging (JSON format) in production for easy parsing. Include request IDs for distributed tracing. Avoid logging sensitive data. Use log rotation to manage file sizes.",
+    "tags": ["python", "observability", "backend"]
+  },
+  {
+    "id": "kb015",
+    "title": "REST API Design Principles",
+    "content": "Use nouns for resources, HTTP verbs for actions. GET /users, POST /users, PUT /users/1, DELETE /users/1. Return appropriate status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 500 Internal Server Error. Version your API with /v1/. Use pagination for list endpoints.",
+    "tags": ["api", "design", "backend"]
+  }
+]
