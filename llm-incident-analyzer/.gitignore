@@ -1,0 +1,21 @@
+# --- MLflow ---
+mlruns/
+mlartifacts/
+mlflow.db
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+venv/
+.venv/
+env/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.vscode/
+.idea/
